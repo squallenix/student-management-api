@@ -27,7 +27,7 @@ const createStudent = async (req, res) => {
     });
   }
 };
-// Get All Students
+
 const getStudents = async (req, res) => {
   try {
     const {
@@ -39,7 +39,7 @@ const getStudents = async (req, res) => {
 
     const query = {};
 
-    // Search by name
+    
     if (search) {
       query.name = {
         $regex: search,
@@ -47,7 +47,7 @@ const getStudents = async (req, res) => {
       };
     }
 
-    // Filter by course
+    
     if (course) {
       query.course = course;
     }
@@ -74,7 +74,7 @@ const getStudents = async (req, res) => {
     });
   }
 };
-// Get Single Student
+
 const getStudentById = async (req, res) => {
   try {
     const student = await Student.findById(req.params.id);
@@ -98,7 +98,7 @@ const getStudentById = async (req, res) => {
   }
 };
 
-// Update Student
+
 const updateStudent = async (req, res) => {
   try {
     const student = await Student.findByIdAndUpdate(
@@ -129,7 +129,7 @@ const updateStudent = async (req, res) => {
     });
   }
 };
-// Delete Student
+
 const deleteStudent = async (req, res) => {
   try {
     const student = await Student.findByIdAndDelete(req.params.id);
